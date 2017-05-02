@@ -1,7 +1,4 @@
 package com.codecool.shop.model;
-
-import java.util.ArrayList;
-
 /**
  * Created by Peter Bognar on 2017.05.02..
  */
@@ -15,7 +12,7 @@ public class Order extends Cart {
 
     public void Order(){}
 
-    public void Order(Product product, int quantity, String status){
+    public void Order(Product product, int quantity){
         this.id = nextId;
         nextId++;
         this.product = product;
