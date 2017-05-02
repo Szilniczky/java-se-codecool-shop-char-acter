@@ -48,7 +48,19 @@ public class Main {
         supplierDataStore.add(lenovo);
 
         //setting up a new product category
-        ProductCategory tablet = new ProductCategory("Tablet", "Hardware", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
+        ProductCategory tablet = new ProductCategory("Tablet", "Electronics", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory phone = new ProductCategory("Phone", "Electronics", "A phone is a telecommunications device that permits two or more users to conduct a conversation when they are too far apart to be heard directly.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory laptop = new ProductCategory("Laptop", "Electronics", "A laptop, often called a notebook, is a small, portable personal computer with a  form factor, an alphanumeric keyboard on the lower part and a thin LCD or LED computer screen on the upper portion, which is opened up to use the computer.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory pc = new ProductCategory("Pc", "Electronics", "A personal computer (PC) is a multi-purpose electronic computer whose size, capabilities, and price make it feasible for individual use.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory monitor = new ProductCategory("Monitor", "Electronics", "A monitor is an electronic visual display for computers.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory accessories = new ProductCategory("Accessories", "Electronics", "Computer parts and more like mice and keyboards.");
+        productCategoryDataStore.add(tablet);
+        ProductCategory all = new ProductCategory("All", "Electronics", "All products.");
         productCategoryDataStore.add(tablet);
 
         //setting up products and printing it
