@@ -46,6 +46,24 @@ public class Main {
         supplierDataStore.add(amazon);
         Supplier lenovo = new Supplier("Lenovo", "Computers");
         supplierDataStore.add(lenovo);
+        Supplier nokia = new Supplier("Nokia", "Phones");
+        supplierDataStore.add(lenovo);
+        Supplier asus = new Supplier("Asus", "Computers and phones");
+        supplierDataStore.add(lenovo);
+        Supplier acer = new Supplier("Acer", "Computers and phones");
+        supplierDataStore.add(lenovo);
+        Supplier samsung = new Supplier("Samsung", "Phones and monitors");
+        supplierDataStore.add(lenovo);
+        Supplier philips = new Supplier("Philips", "Monitors");
+        supplierDataStore.add(lenovo);
+        Supplier lg = new Supplier("Lg", "Monitors");
+        supplierDataStore.add(lenovo);
+        Supplier trust = new Supplier("Trust", "Keyboards");
+        supplierDataStore.add(lenovo);
+        Supplier maxtor = new Supplier("Maxtor", "Mass storage");
+        supplierDataStore.add(lenovo);
+        Supplier hama = new Supplier("Hama", "Mouse");
+        supplierDataStore.add(lenovo);
 
         //setting up a new product category
         ProductCategory tablet = new ProductCategory("Tablet", "Electronics", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
