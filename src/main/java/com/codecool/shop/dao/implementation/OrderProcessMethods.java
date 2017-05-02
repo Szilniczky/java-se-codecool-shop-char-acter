@@ -12,7 +12,6 @@ public class OrderProcessMethods implements OrderProcess {
     @Override
     public Order addToCart(Order order, ArrayList orderList) {
         Iterator iterator = orderList.iterator();
-
         while (iterator.hasNext()){
             if(order.getProduct() == iterator.next()){
                 int quantity = order.getQuantity();
@@ -27,30 +26,35 @@ public class OrderProcessMethods implements OrderProcess {
                 order.setStatus("inCart");
             }
         }
-
         return null;
     }
 
     @Override
-    public Order checkOut(Order order) {
-        if (order.getStatus() == "inCart"){
-            order.setStatus("inCheckOut");
-        }
-
-        return null;
-    }
-
-    @Override
-    public Order payment(Order order) {
-        if (order.getStatus() == "inCheckOut"){
-            order.setStatus("payed");
+    public Order checkOut(Order order, ArrayList orderList) {
+        Iterator iterator = orderList.iterator();
+        while (iterator.hasNext()){
+            if (order.getProduct() == iterator.next() && order.getStatus() == "inCart"){
+                order.setStatus("inCheckOut");
+            }
         }
         return null;
     }
 
     @Override
-    public Order feedBack(Order order) {
-        if (order.getStatus() == "payed"){
+    public Order payment(Order order, ArrayList orderList) {
+        Iterator iterator = orderList.iterator();
+        while (iterator.hasNext()){
+            if (order.getProduct() == iterator.next() && order.getStatus() == "inCheckOut"){
+                order.setStatus("payed");
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Order feedBack(Order order, ArrayList orderList) {
+        Iterator iterator = orderList.iterator();
+        if (order.getProduct() == iterator.next() && order.getStatus() == "payed"){
             order.setStatus("payed");
         }
         return null;

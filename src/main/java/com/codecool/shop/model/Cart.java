@@ -14,9 +14,9 @@ public class Cart {
 
     public Cart(){
         Order ordering = new OrderProcessMethods().addToCart(order, orderList);
-        Order checking = new OrderProcessMethods().checkOut(order);
-        Order paying = new OrderProcessMethods().payment(order);
-        Order feeding = new OrderProcessMethods().feedBack(order);
+        Order checking = new OrderProcessMethods().checkOut(order, orderList);
+        Order paying = new OrderProcessMethods().payment(order, orderList);
+        Order feeding = new OrderProcessMethods().feedBack(order, orderList);
     }
 
 
