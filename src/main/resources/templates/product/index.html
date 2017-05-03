@@ -50,27 +50,29 @@
 
 <body>
 
-<div class="shop-name">
-    <form>
-        <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
-        <i class="material-icons">cloud</i>
-        <select>
-            <option value="tablet">Tablet</option>
-            <option value="phone">Phone</option>
-            <option value="software">Software</option>
-            <option value="pc_hardware">PC hardware</option>
-            <option value="accessories">Accessories</option>
-        </select>
-    </form>
-</div>
 
 
 
 <div class="container">
     <div class="well well-sm">
-        <strong th:text="${category.name}">Category Title</strong>
+        <strong th:text="${category.name}"></strong>
     </div>
 
+    <div class="shop-name">
+        <form>
+            <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
+            <span class="glyphicon glyphicon-search"></span>
+            <select name="id">
+                <option value="1">Accessories</option>
+                <option value="2">Laptop</option>
+                <option value="3">PC hardware</option>
+                <option value="4">Tablet</option>
+                <option value="5">Phone</option>
+                <option value="6">Monitor</option>
+            </select>
+            <input type="submit"/>
+        </form>
+    </div>
 
 
     <div id="products" class="row list-group">
