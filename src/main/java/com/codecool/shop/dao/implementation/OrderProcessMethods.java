@@ -1,6 +1,8 @@
 package com.codecool.shop.dao.implementation;
 import com.codecool.shop.dao.OrderProcess;
+import com.codecool.shop.model.Cart;
 import com.codecool.shop.model.Order;
+import com.codecool.shop.model.OrderList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,20 +19,21 @@ public class OrderProcessMethods implements OrderProcess {
                 int quantity = order.getQuantity();
                 order.setQuantity(quantity + 1);
                 orderList.add(order);
-                order.setStatus("inCart");
+                
+
             }
             else {
                 int quantity = order.getQuantity();
                 order.setQuantity(quantity);
                 orderList.add(order);
-                order.setStatus("inCart");
+
             }
         }
         return null;
     }
 
     @Override
-    public Order checkOut(Order order, ArrayList orderList) {
+    public ArrayList<Order> checkOut(ArrayList orderList) {
         Iterator iterator = orderList.iterator();
         while (iterator.hasNext()){
             if (order.getProduct() == iterator.next() && order.getStatus() == "inCart"){
@@ -41,18 +44,19 @@ public class OrderProcessMethods implements OrderProcess {
     }
 
     @Override
-    public Order payment(Order order, ArrayList orderList) {
+    public ArrayList<Order> payment(ArrayList orderList) {
         Iterator iterator = orderList.iterator();
         while (iterator.hasNext()){
             if (order.getProduct() == iterator.next() && order.getStatus() == "inCheckOut"){
                 order.setStatus("payed");
             }
         }
+
         return null;
     }
 
     @Override
-    public Order feedBack(Order order, ArrayList orderList) {
+    public ArrayList<Order> feedBack(ArrayList orderList) {
         Iterator iterator = orderList.iterator();
         if (order.getProduct() == iterator.next() && order.getStatus() == "payed"){
             order.setStatus("payed");

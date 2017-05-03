@@ -9,8 +9,8 @@ import java.util.ArrayList;
  */
 public interface OrderProcess {
     Order addToCart(Order order, ArrayList orderList);
-    Order checkOut(Order order, ArrayList orderList);
-    Order payment(Order order, ArrayList orderList);
-    Order feedBack(Order order, ArrayList orderList);
+    ArrayList<Order> checkOut(ArrayList orderList);
+    ArrayList<Order> payment(ArrayList orderList);
+    ArrayList<Order> feedBack(ArrayList orderList);
 
 }
