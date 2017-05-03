@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 
+
     <title>not eBay</title>
 
     <!-- Latest compiled and minified Jquery -->
@@ -30,20 +31,28 @@
 
 </head>
 
-<body>
+<header>
+    <div class = "navbar-fixed-top">
+        <nav class="header-fixed">
+            <div class="navbar-brand">
+                <img id="test-img" src="/img/ebay_logo.png" alt="test-img"/>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<nav class="header-fixed">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">My cart</a></li>
-    </ul>
-    <i class="material-icons">cloud</i>
-</nav>
+
+<body>
 
 
 <div class="shop-name">
     <form>
-        <img id="test-img" src="public/img/ebay_logo.png" alt="test-img" style="width:128px;height:128px;"/>
         <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
         <i class="material-icons">cloud</i>
         <select>
