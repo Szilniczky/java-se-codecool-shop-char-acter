@@ -5,7 +5,10 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Codecool Shop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+
+
+    <title>not eBay</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -25,18 +28,50 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
 </head>
+
+<header>
+    <div class = "navbar-fixed-top">
+        <nav class="header-fixed">
+            <div class="navbar-brand">
+                <img id="logo-png" src="/img/ebay_logo.png" alt="logo"/>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
 
 <body>
 
-<div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
+<div class="shop-name">
+    <form>
+        <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
+        <i class="material-icons">cloud</i>
+        <select>
+            <option value="tablet">Tablet</option>
+            <option value="phone">Phone</option>
+            <option value="software">Software</option>
+            <option value="pc_hardware">PC hardware</option>
+            <option value="accessories">Accessories</option>
+        </select>
+    </form>
 </div>
+
+
 
 <div class="container">
     <div class="well well-sm">
         <strong th:text="${category.name}">Category Title</strong>
     </div>
+
+
 
     <div id="products" class="row list-group">
 
