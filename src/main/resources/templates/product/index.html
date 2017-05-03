@@ -35,7 +35,7 @@
     <div class = "navbar-fixed-top">
         <nav class="header-fixed">
             <div class="navbar-brand">
-                <img id="test-img" src="/img/ebay_logo.png" alt="test-img"/>
+                <img id="logo-png" src="/img/ebay_logo.png" alt="logo"/>
             </div>
             <div class="nav-menu">
                 <ul>
@@ -50,14 +50,16 @@
 
 <body>
 
-
 <div class="shop-name">
     <form>
         <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
         <i class="material-icons">cloud</i>
         <select>
-            <option value="ProductCategory">by category</option>
-            <option value="Supplier">by supplier</option>
+            <option value="tablet">Tablet</option>
+            <option value="phone">Phone</option>
+            <option value="software">Software</option>
+            <option value="pc_hardware">PC hardware</option>
+            <option value="accessories">Accessories</option>
         </select>
     </form>
 </div>
@@ -68,6 +70,8 @@
     <div class="well well-sm">
         <strong th:text="${category.name}">Category Title</strong>
     </div>
+
+
 
     <div id="products" class="row list-group">
 
