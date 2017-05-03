@@ -47,23 +47,23 @@ public class Main {
         Supplier lenovo = new Supplier("Lenovo", "Computers");
         supplierDataStore.add(lenovo);
         Supplier nokia = new Supplier("Nokia", "Phones");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(nokia);
         Supplier asus = new Supplier("Asus", "Computers and phones");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(asus);
         Supplier acer = new Supplier("Acer", "Computers and phones");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(acer);
         Supplier samsung = new Supplier("Samsung", "Phones and monitors");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(samsung);
         Supplier philips = new Supplier("Philips", "Monitors");
         supplierDataStore.add(lenovo);
         Supplier lg = new Supplier("Lg", "Monitors");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(lg);
         Supplier trust = new Supplier("Trust", "Keyboards");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(trust);
         Supplier maxtor = new Supplier("Maxtor", "Mass storage");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(maxtor);
         Supplier hama = new Supplier("Hama", "Mouse");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(hama);
 
         //setting up a new product category
         ProductCategory accessories = new ProductCategory("Accessories", "Electronics", "Computer parts and more like mice and keyboards.");
@@ -87,25 +87,25 @@ public class Main {
         productDataStore.add(new Product("Lenovo IdeaPad Miix 700", 479, "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
         productDataStore.add(new Product("Amazon Fire HD 8", 89, "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
         //Phone
-        productDataStore.add(new Product("ASUS ZenFone 3 MAX ZC520TL Mobiltelefon", 202.46f, "USD", "Dual SIM, 32GB, LTE, Silver", phone, asus));
+        productDataStore.add(new Product("ASUS ZenFone 3 MAX ZC520TL", 202.46f, "USD", "Dual SIM, 32GB, LTE, Silver", phone, asus));
         productDataStore.add(new Product("Lenovo A2010", 83.57f, "USD", "Dual SIM, 8GB, LTE, Black", phone, lenovo));
         productDataStore.add(new Product("Nokia 3310", 10, "USD", "You can play snake on it, Blue", phone, nokia));
         //PC
         productDataStore.add(new Product("Lenovo IdeaCentre 300-20ISH MT", 400, "USD", "Intel® Core™ i3-6100 3.7GHz, Skylake™, 8GB, 1TB, DVD-RW, nVidia GT730 2GB, Free DOS, Black", pc, lenovo));
-        productDataStore.add(new Product("ASUS K31CD-RO021D", 506.68f, "USD", "Intel® Core™ i3-6100 3.70GHz, Skylake™, 4GB, 1TB, DVD-RW, nVIDIA GeForce GT 730 2GB, Free DOS, Black", pc, asus));
+        productDataStore.add(new Product("ASUS K31CD-RO021D", 506.68f, "USD", "Intel® Core™ i3-6100 3.70GHz, Skylake™, 4GB, 1TB, nVIDIA GeForce GT 730 2GB, Free DOS, Black", pc, asus));
         productDataStore.add(new Product("Acer M2-601", 384.29f, "USD", "Intel® Core™ i3 6100U 2.30GHz, Skylake™, 8GB, 128 GB SSD, Intel® HD Graphics, Free DOS, Black", pc, acer));
         //Monitor
-        productDataStore.add(new Product("Samsung LS24F350FH LED monitor", 150.01f, "USD", "24\", Full HD, D-Sub, HDMI, Fekete", monitor, samsung));
+        productDataStore.add(new Product("Samsung LS24F350FH/00AA LED monitor", 150.01f, "USD", "24\", Full HD, D-Sub, HDMI, Fekete", monitor, samsung));
         productDataStore.add(new Product("Philips 276E6ADSS/00 LED IPS-ADS monitor", 219.95f, "USD", "27\", Full HD, DVI, HDMI, Black", monitor, philips));
         productDataStore.add(new Product("LG 24UD58-B gaming LED monitor", 324.85f, "USD", "24\", Ultra HD, 4K, FreeSync, HDMI, Display port, Black", monitor, lg));
         //Laptop
         productDataStore.add(new Product("Lenovo 110-15IBR laptop", 244.42f, "USD", " Intel® Celeron N3060 1.6GHz, HD, 2GB, 500GB, Intel HD Graphics, Free Dos", laptop, lenovo));
-        productDataStore.add(new Product("Asus Transformer Mini T102HA-GR022T laptop", 506.68f, "USD", "Intel® Atom™ x5-Z8350 1.44 GHz, HD, 4GB DDR3, 128GB SSD, Intel® HD, Microsoft® Windows® 10 Home", laptop, asus));
+        productDataStore.add(new Product("Asus Transformer Mini T102HA laptop", 506.68f, "USD", "Intel® Atom™ x5-Z8350 1.44 GHz, HD, 4GB DDR3, 128GB SSD, Intel® HD, Microsoft® Windows® 10", laptop, asus));
         productDataStore.add(new Product("Acer Aspire ES1-571-370P laptop", 384.29f, "USD", "ntel® Core™ i3-5005U 2.00 GHz, 4GB DDR3, 1TB, Intel® HD 5500, Linux®", laptop, acer));
         //Accessories
         productDataStore.add(new Product("Trust ClassicLine", 6.96f, "USD", "Hungarian layout", accessories, trust));
         productDataStore.add(new Product("Maxtor M3 portable mass storage", 69.59f, "USD", "1 TB, 2.5\", USB 3.0, Black", accessories, maxtor));
-        productDataStore.add(new Product("HAMA Urage Reaper NXT gaming mouse", 24.44f, "USD", "Black with led", accessories, hama));
+        productDataStore.add(new Product("HAMA Urage Reaper NXT mouse", 24.44f, "USD", "Black with led", accessories, hama));
 
     }
 
