@@ -1,11 +1,17 @@
 /* header */
 
+
+
+.panel-body{
+    background: #9CC69B;
+}
+
 .header-fixed {
     width: 100%;
     height: 20px;
     position: fixed;
     top: 0;
-    background: #5493d8;
+    background: #79B4A9;
 }
 
 .header-fixed ul {
@@ -16,7 +22,7 @@
 }
 
 .header-fixed ul li a:hover {
-    color: #3e3184;
+    color: #676F54;
 }
 
 .header-fixed ul li {
@@ -29,25 +35,26 @@
     font-size: 1rem;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .shop-name {
-    display: block;
-    overflow: hidden;
+    display: inline-block;
     font-size: 2rem;
     padding-left: 5px;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
+#test-img{
+    padding-top: 10px;
+}
 
-input {
+#search-input{
     height: 40px;
-    width: 200px;
-    border: 2px solid #c2e1ff;
-    padding-left: 5px;
+    width: 850px;
+    background: #9CC69B;
 }
-
 
 
 
@@ -82,7 +89,7 @@ input {
 }
 .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
 {
-    background: #428bca;
+    background: #9CC69B;
 }
 
 .item.list-group-item .list-group-image
