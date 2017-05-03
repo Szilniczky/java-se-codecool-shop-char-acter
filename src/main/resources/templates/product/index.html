@@ -57,7 +57,7 @@
 
     <div class="shop-name">
         <form>
-            <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
+            <input id = "search-input" name="search-bar" placeholder="search..." type="text" onkeyup="myFunction()"/>
             <span class="glyphicon glyphicon-search"></span>
             <select name="id">
                 <option value="1">Accessories</option>
@@ -105,7 +105,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div th:replace="footer :: copy"></div>

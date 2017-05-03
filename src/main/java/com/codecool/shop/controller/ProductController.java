@@ -32,7 +32,7 @@ public class ProductController {
 
         int id2 = Integer.parseInt(req.queryParams("id2"));
         params.put("supplier", productDataStore.getBy(supplierDao.find(id2)));
-        
+
         int id = Integer.parseInt(req.queryParams("id"));
         params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
 
