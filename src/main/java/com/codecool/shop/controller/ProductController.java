@@ -27,6 +27,7 @@ public class ProductController {
         params.put("category", productCategoryDataStore.find(1));
         params.put("products", productDataStore.getBy(productCategoryDataStore.find(1)));
         return new ModelAndView(params, "product/index");
+
     }
 
 }

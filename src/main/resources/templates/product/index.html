@@ -50,19 +50,6 @@
 
 <body>
 
-<div class="shop-name">
-    <form>
-        <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
-        <i class="material-icons">cloud</i>
-        <select>
-            <option value="tablet">Tablet</option>
-            <option value="phone">Phone</option>
-            <option value="software">Software</option>
-            <option value="pc_hardware">PC hardware</option>
-            <option value="accessories">Accessories</option>
-        </select>
-    </form>
-</div>
 
 
 
@@ -71,7 +58,19 @@
         <strong th:text="${category.name}">Category Title</strong>
     </div>
 
-
+    <div class="shop-name">
+        <form>
+            <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
+            <i class="material-icons">cloud</i>
+            <select>
+                <option th:text="${category.name}">Category Title</option>
+                <option value="phone">Phone</option>
+                <option value="software">Software</option>
+                <option value="pc_hardware">PC hardware</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </form>
+    </div>
 
     <div id="products" class="row list-group">
 
