@@ -1,5 +1,4 @@
 package com.codecool.shop.model;
-import com.codecool.shop.dao.implementation.OrderProcessMethods;
 import java.util.ArrayList;
 
 /**
@@ -7,8 +6,9 @@ import java.util.ArrayList;
  */
 public class Cart {
 
-    public Cart(){
-        ArrayList<OrderList> orderList = new ArrayList<>();
+    public OrderList Cart(){
+        OrderList orderList = new OrderList();
+        return orderList;
     }
 
 }

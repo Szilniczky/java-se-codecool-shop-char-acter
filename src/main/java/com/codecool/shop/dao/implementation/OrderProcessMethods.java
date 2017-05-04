@@ -2,10 +2,9 @@ package com.codecool.shop.dao.implementation;
 import com.codecool.shop.dao.OrderProcess;
 import com.codecool.shop.model.Order;
 import com.codecool.shop.model.OrderList;
-import freemarker.core._ArrayIterator;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 /**
  * Created by Peter Bognar on 2017.05.02..
  */
@@ -13,16 +12,16 @@ public class OrderProcessMethods implements OrderProcess {
     public OrderProcessMethods(Order order, OrderList orderList){
         switch(orderList.getStatus()){
             case newOrder:
-                new OrderProcessMethods(order, orderList).addToCart(order, orderList);
+                orderList.setStatus(OrderList.Status.newOrder);
                 break;
             case inCheckOut:
-                new OrderProcessMethods(order, orderList).checkOut(orderList);
+                orderList.setStatus(OrderList.Status.inCheckOut);
                 break;
             case inCart:
-                new OrderProcessMethods(order, orderList).payment(orderList);
+                orderList.setStatus(OrderList.Status.inCart);
                 break;
             case payed:
-                new OrderProcessMethods(order, orderList).feedBack(orderList);
+                orderList.setStatus(OrderList.Status.inCart);
         }
     }
 
