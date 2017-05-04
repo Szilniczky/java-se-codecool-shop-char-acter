@@ -5,18 +5,21 @@ import java.util.ArrayList;
 /**
  * Created by Peter Bognar on 2017.05.02..
  */
-public class CartMethod {
+public class Cart {
+    ArrayList<OrderList> cart = new ArrayList<>();
+    public Cart(){    }
 
-    ArrayList<OrderList> orderList = new ArrayList<>();
-
-    public CartMethod(Product product, int quantity){
+    public Cart(Product product, int quantity, ArrayList orderList){
         Order order = new Order (product, quantity);
         new OrderProcessMethods().addToCart(order, orderList);
     }
-    public CartMethod(){
+ /*   public CartMethod(){
         new OrderProcessMethods().checkOut(orderList);
         new OrderProcessMethods().payment(orderList);
         new OrderProcessMethods().feedBack(orderList);
-    }
+    }*/
+ public ArrayList<OrderList> getCart() {
+     return cart;
+ }
 
 }

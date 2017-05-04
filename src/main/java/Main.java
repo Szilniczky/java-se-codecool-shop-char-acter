@@ -9,6 +9,8 @@ import spark.Request;
 import spark.Response;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -40,6 +42,9 @@ public class Main {
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+
+        // Cart list object
+        Cart cartMethod = new Cart();
 
         //setting up a new supplier
         Supplier amazon = new Supplier("Amazon", "Digital content and services");
