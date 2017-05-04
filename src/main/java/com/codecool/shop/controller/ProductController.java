@@ -38,6 +38,11 @@ public class ProductController {
         } else if (!idSupplier.equals("0") & idProduct.equals("0") ){
             int id2 = Integer.parseInt(req.queryParams("id2"));
             params.put("products", productDataStore.getBy(supplierDao.find(id2)));
+        } else if (!idSupplier.equals("0") & !idProduct.equals("0")){
+            int id = Integer.parseInt(idProduct);
+            int id2 = Integer.parseInt(req.queryParams("id2"));
+            params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
+            params.put("products", productDataStore.getBy(supplierDao.find(id2)));
         }
 
         return new ModelAndView(params, "product/index");
