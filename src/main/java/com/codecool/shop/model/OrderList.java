@@ -17,5 +17,8 @@ public abstract class OrderList {
     public Order getOrder() {
         return order;
     }
+    public Status getStatus() {
+        return status;
+    }
 }
 

@@ -9,7 +9,10 @@ public class Order {
     private Product product;
     private int quantity;
 
-    public void Order(){}
+    public Order() {
+
+    }
+
 
     public Order(Product product, int quantity){
         this.id = nextId;

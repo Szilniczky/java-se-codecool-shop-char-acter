@@ -2,15 +2,17 @@ package com.codecool.shop.dao;
 
 import com.codecool.shop.dao.implementation.OrderProcessMethods;
 import com.codecool.shop.model.Order;
+import com.codecool.shop.model.OrderList;
+
 import java.util.ArrayList;
 
 /**
  * Created by Peter Bognar on 2017.05.02..
  */
 public interface OrderProcess {
-    Order addToCart(Order order, ArrayList orderList);
-    ArrayList<Order> checkOut(ArrayList orderList);
-    ArrayList<Order> payment(ArrayList orderList);
-    ArrayList<Order> feedBack(ArrayList orderList);
+    Order addToCart(Order order, OrderList orderList);
+    ArrayList<Order> checkOut(OrderList orderList);
+    ArrayList<Order> payment(OrderList orderList);
+    ArrayList<Order> feedBack(OrderList orderList);
 
 }
