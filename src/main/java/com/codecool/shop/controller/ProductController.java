@@ -30,21 +30,20 @@ public class ProductController {
         String idSupplier = req.queryParams("id2");
         String idProduct = req.queryParams("id");
 
-        if ( idProduct == null & idSupplier == null){
+        if ( idProduct == null & idSupplier == null || idProduct.equals("0") & idSupplier.equals("0")){
             params.put("products", productDataStore.getAll());
-        } else if(idProduct != null & idSupplier.equals("0")){
+        } else if(!idProduct.equals("0") & idSupplier.equals("0")){
             int id = Integer.parseInt(idProduct);
             params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
-        } else if (idSupplier != null & idProduct == null ){
+        } else if (!idSupplier.equals("0") & idProduct.equals("0") ){
             int id2 = Integer.parseInt(req.queryParams("id2"));
-            params.put("supplier", productDataStore.getBy(supplierDao.find(id2)));
+            params.put("products", productDataStore.getBy(supplierDao.find(id2)));
+        } else if (!idSupplier.equals("0") & !idProduct.equals("0")){
+            int id = Integer.parseInt(idProduct);
+            int id2 = Integer.parseInt(req.queryParams("id2"));
+            params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
+            params.put("products", productDataStore.getBy(supplierDao.find(id2)));
         }
-
-
-
-        /*String search = req.queryParams("search-bar");
-        params.put("products", productDataStore.getBy(productCategoryDataStore.find(search)));*/
-
 
         return new ModelAndView(params, "product/index");
     }

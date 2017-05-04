@@ -37,12 +37,12 @@ public class Main {
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
         });
 
-        get("/hello2", (Request req, Response res) -> {
+        get("/", (Request req, Response res) -> {
             req.session().attribute("cart", orderLists);
             Cart cart2 = req.session().attribute("cart");
             return "session executed";
         });
-        get("/addtocart", (Request req, Response res) -> {
+        get("/cart", (Request req, Response res) -> {
             System.out.println("addtocart");
             Order order = new Order();
             new OrderProcessMethods(order, orderLists);
@@ -74,7 +74,7 @@ public class Main {
         Supplier samsung = new Supplier("Samsung", "Phones and monitors");
         supplierDataStore.add(samsung);
         Supplier philips = new Supplier("Philips", "Monitors");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(philips);
         Supplier lg = new Supplier("Lg", "Monitors");
         supplierDataStore.add(lg);
         Supplier trust = new Supplier("Trust", "Keyboards");
