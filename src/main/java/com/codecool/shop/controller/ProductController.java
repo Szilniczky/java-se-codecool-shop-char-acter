@@ -26,11 +26,21 @@ public class ProductController {
         Map params = new HashMap<>();
         params.put("category", productCategoryDataStore.find(1));
 
-        int id2 = Integer.parseInt(req.queryParams("id2"));
-        params.put("supplier", productDataStore.getBy(supplierDao.find(id2)));
 
-        int id = Integer.parseInt(req.queryParams("id"));
-        params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
+        String idSupplier = req.queryParams("id2");
+        String idProduct = req.queryParams("id");
+
+        if ( idProduct == null & idSupplier == null){
+            params.put("products", productDataStore.getAll());
+        } else if(idProduct != null & idSupplier.equals("0")){
+            int id = Integer.parseInt(idProduct);
+            params.put("products", productDataStore.getBy(productCategoryDataStore.find(id)));
+        } else if (idSupplier != null & idProduct == null ){
+            int id2 = Integer.parseInt(req.queryParams("id2"));
+            params.put("supplier", productDataStore.getBy(supplierDao.find(id2)));
+        }
+
+
 
         /*String search = req.queryParams("search-bar");
         params.put("products", productDataStore.getBy(productCategoryDataStore.find(search)));*/
