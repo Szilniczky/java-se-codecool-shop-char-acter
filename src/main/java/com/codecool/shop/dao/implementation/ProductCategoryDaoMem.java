@@ -36,8 +36,7 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
     }
 
     @Override
-    public void remove(int id) {
-        DATA.remove(find(id));
+    public void remove(int id) { DATA.remove(find(id));
     }
 
     @Override
