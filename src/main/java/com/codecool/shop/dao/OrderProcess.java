@@ -1,6 +1,5 @@
 package com.codecool.shop.dao;
 
-import com.codecool.shop.dao.implementation.OrderProcessMethods;
 import com.codecool.shop.model.Order;
 import com.codecool.shop.model.OrderList;
 

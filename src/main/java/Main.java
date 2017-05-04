@@ -1,7 +1,6 @@
 import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
-import com.codecool.shop.controller.OrderController;
 import com.codecool.shop.controller.ProductController;
 import com.codecool.shop.dao.*;
 import com.codecool.shop.dao.implementation.*;
@@ -31,10 +30,7 @@ public class Main {
         get("/index", (Request req, Response res) -> {
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
         });
-
-        get("/cart", (Request req, Response res) -> {
-            return new ThymeleafTemplateEngine().render( OrderController.renderOrder(req, res) );
-        });
+        
 
 
 

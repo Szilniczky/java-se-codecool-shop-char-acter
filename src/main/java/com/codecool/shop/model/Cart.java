@@ -1,5 +1,4 @@
 package com.codecool.shop.model;
-import com.codecool.shop.dao.implementation.OrderProcessMethods;
 import java.util.ArrayList;
 
 /**
