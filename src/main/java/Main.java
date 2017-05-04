@@ -30,7 +30,7 @@ public class Main {
         get("/index", (Request req, Response res) -> {
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
         });
-        
+
 
 
 
@@ -69,18 +69,7 @@ public class Main {
         supplierDataStore.add(maxtor);
         Supplier hama = new Supplier("Hama", "Mouse");
         supplierDataStore.add(hama);
-
-        System.out.println(amazon);
-        System.out.println(lenovo);
-        System.out.println(nokia);
-        System.out.println(asus);
-        System.out.println(acer);
-        System.out.println(samsung);
-        System.out.println(lg);
-        System.out.println(trust);
-        System.out.println(maxtor);
-        System.out.println(hama);
-
+        
         //setting up a new product category
         ProductCategory accessories = new ProductCategory("Accessories", "Electronics", "Computer parts and more like mice and keyboards.");
         productCategoryDataStore.add(accessories);
