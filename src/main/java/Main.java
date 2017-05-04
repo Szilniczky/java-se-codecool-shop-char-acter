@@ -1,6 +1,7 @@
 import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
+import com.codecool.shop.controller.OrderController;
 import com.codecool.shop.controller.ProductController;
 import com.codecool.shop.dao.*;
 import com.codecool.shop.dao.implementation.*;
@@ -31,6 +32,12 @@ public class Main {
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
         });
 
+        get("/cart", (Request req, Response res) -> {
+            return new ThymeleafTemplateEngine().render( OrderController.renderOrder(req, res) );
+        });
+
+
+
         // Add this line to your project to enable the debug screen
         enableDebugScreen();
     }
@@ -57,7 +64,7 @@ public class Main {
         Supplier samsung = new Supplier("Samsung", "Phones and monitors");
         supplierDataStore.add(samsung);
         Supplier philips = new Supplier("Philips", "Monitors");
-        supplierDataStore.add(lenovo);
+        supplierDataStore.add(philips);
         Supplier lg = new Supplier("Lg", "Monitors");
         supplierDataStore.add(lg);
         Supplier trust = new Supplier("Trust", "Keyboards");
@@ -66,6 +73,17 @@ public class Main {
         supplierDataStore.add(maxtor);
         Supplier hama = new Supplier("Hama", "Mouse");
         supplierDataStore.add(hama);
+
+        System.out.println(amazon);
+        System.out.println(lenovo);
+        System.out.println(nokia);
+        System.out.println(asus);
+        System.out.println(acer);
+        System.out.println(samsung);
+        System.out.println(lg);
+        System.out.println(trust);
+        System.out.println(maxtor);
+        System.out.println(hama);
 
         //setting up a new product category
         ProductCategory accessories = new ProductCategory("Accessories", "Electronics", "Computer parts and more like mice and keyboards.");

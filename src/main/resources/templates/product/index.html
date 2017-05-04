@@ -35,12 +35,12 @@
     <div class = "navbar-fixed-top">
         <nav class="header-fixed">
             <div class="navbar-brand">
-                <img id="logo-png" src="/img/ebay_logo.png" alt="logo"/>
+                <a href="/"> <img id="logo-png" src="/img/ebay_logo.png" alt="logo"/></a>
             </div>
             <div class="nav-menu">
                 <ul>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    <li><a href = "/cart" target="_blank" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
                 </ul>
             </div>
         </nav>
@@ -50,16 +50,13 @@
 <body>
 
 <div class="container">
-    <div class="well well-sm">
-        <strong th:text="${category.name}"></strong>
-    </div>
 
 
     <div class="shop-name">
         <form>
             <input id = "search-input" name="search-bar" placeholder="search..." type="text" onkeyup="myFunction()"/>
             <span class="glyphicon glyphicon-search"></span>
-            <select name="id">
+            <select class = "select" name="id">
                 <option value="0">All products</option>
                 <option value="1">Accessories</option>
                 <option value="2">Laptop</option>
@@ -68,7 +65,7 @@
                 <option value="5">Phone</option>
                 <option value="6">Monitor</option>
             </select>
-            <select name="id2">
+            <select class = "select" name="id2">
                 <option value="0">All supplier</option>
                 <option value="1">Amazon</option>
                 <option value="2">Lenovo</option>
@@ -82,7 +79,7 @@
                 <option value="10">Maxtor</option>
                 <option value="11">Hama</option>
             </select>
-            <input type="submit"/>
+            <input class = "submit" type="submit"/>
         </form>
     </div>
 
@@ -100,7 +97,8 @@
                             <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
+                            <a id = "add-btn" class="btn btn-success">Add to cart</a>
+                            <input type="number" name="quantity" min="1" max="99" placeholder="-"/>
                         </div>
                     </div>
                 </div>

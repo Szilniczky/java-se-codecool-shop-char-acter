@@ -1,7 +1,5 @@
 package com.codecool.shop.model;
-/**
- * Created by Peter Bognar on 2017.05.02..
- */
+
 public class Order {
     private static int nextId = 1;
 
@@ -33,7 +31,4 @@ public class Order {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-
-
 }
