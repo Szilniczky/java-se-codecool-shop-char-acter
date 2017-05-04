@@ -69,7 +69,7 @@ public class Main {
         supplierDataStore.add(maxtor);
         Supplier hama = new Supplier("Hama", "Mouse");
         supplierDataStore.add(hama);
-        
+
         //setting up a new product category
         ProductCategory accessories = new ProductCategory("Accessories", "Electronics", "Computer parts and more like mice and keyboards.");
         productCategoryDataStore.add(accessories);
