@@ -1,3 +1,64 @@
+/* header */
+
+
+
+.panel-body{
+    background: #abb2ff;
+}
+
+.header-fixed {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    background: #abb2ff;
+}
+
+.header-fixed ul {
+    padding: 0px;
+    margin: 0 auto;
+    list-style: none;
+    text-align: right;
+}
+
+.header-fixed ul li a:hover {
+    color: #ff9dfb;
+}
+
+.header-fixed ul li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px;
+}
+.header-fixed ul li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.shop-name {
+    display: inline-block;
+    padding-left: 5px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+}
+
+#logo-png {
+    height: 35px;
+    width: auto;
+}
+
+#search-input{
+    height: 40px;
+    width: 500px;
+    background: #ffffff;
+}
+
+
+/* original code */
+
 .glyphicon {
     margin-right:5px;
 }
@@ -22,7 +83,7 @@
 }
 .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
 {
-    background: #428bca;
+    background: #9CC69B;
 }
 
 .item.list-group-item .list-group-image
