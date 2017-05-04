@@ -31,7 +31,7 @@ public class OrderProcessMethods implements OrderProcess {
     @Override
     public Order addToCart(Order order, OrderList orderList) {
         if (orderList.getOrder().getProduct() == order.getProduct()){
-
+            orderList.setStatus(OrderList.Status.inCheckOut);
         }
 
         return null;
