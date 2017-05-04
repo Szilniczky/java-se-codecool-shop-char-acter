@@ -47,20 +47,17 @@
     </div>
 </header>
 
-
 <body>
-
-
-
 
 <div class="container">
     <div class="well well-sm">
         <strong th:text="${category.name}"></strong>
     </div>
 
+
     <div class="shop-name">
         <form>
-            <input id = "search-input" name="search-bar" placeholder="search..." type="text"/>
+            <input id = "search-input" name="search-bar" placeholder="search..." type="text" onkeyup="myFunction()"/>
             <span class="glyphicon glyphicon-search"></span>
             <select name="id">
                 <option value="1">Accessories</option>
@@ -69,6 +66,19 @@
                 <option value="4">Tablet</option>
                 <option value="5">Phone</option>
                 <option value="6">Monitor</option>
+            </select>
+            <select name="id2">
+                <option value="1">Amazon</option>
+                <option value="2">Lenovo</option>
+                <option value="3">Nokia</option>
+                <option value="4">Asus</option>
+                <option value="5">Acer</option>
+                <option value="6">Samsung</option>
+                <option value="7">Philips</option>
+                <option value="8">Lg</option>
+                <option value="9">Trust</option>
+                <option value="10">Maxtor</option>
+                <option value="11">Hama</option>
             </select>
             <input type="submit"/>
         </form>
@@ -95,7 +105,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div th:replace="footer :: copy"></div>
