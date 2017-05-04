@@ -8,6 +8,9 @@ import com.codecool.shop.model.*;
 import spark.Request;
 import spark.Response;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
+import spark.Session;
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -21,6 +24,9 @@ public class Main {
         // populate some data for the memory storage
         populateData();
 
+        OrderList orderLists = new Cart().Cart();
+        orderLists.setStatus(OrderList.Status.newOrder);
+
         // Always start with more specific routes
         get("/hello", (req, res) -> "Hello World");
 
@@ -29,6 +35,19 @@ public class Main {
         // Equivalent with above
         get("/index", (Request req, Response res) -> {
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
+        });
+
+        get("/hello2", (Request req, Response res) -> {
+            req.session().attribute("cart", orderLists);
+            Cart cart2 = req.session().attribute("cart");
+            return "session executed";
+        });
+        get("/addtocart", (Request req, Response res) -> {
+            System.out.println("addtocart");
+            Order order = new Order();
+            new OrderProcessMethods(order, orderLists);
+
+            return orderLists.getStatus();
         });
 
         // Add this line to your project to enable the debug screen
@@ -40,8 +59,6 @@ public class Main {
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
-
-        Cart cart = new Cart();
 
         //setting up a new supplier
         Supplier amazon = new Supplier("Amazon", "Digital content and services");

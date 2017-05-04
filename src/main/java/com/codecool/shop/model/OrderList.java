@@ -2,7 +2,7 @@ package com.codecool.shop.model;
 /**
  * Created by Peter Bognar on 2017.05.03..
  */
-public abstract class OrderList {
+public class OrderList {
     public enum Status {newOrder, inCart, inCheckOut, payed}
     private Status status;
     private Order order;
