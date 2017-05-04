@@ -30,7 +30,7 @@ public class ProductController {
         String idSupplier = req.queryParams("id2");
         String idProduct = req.queryParams("id");
 
-        if ( idProduct == null & idSupplier == null){
+        if ( idProduct == null & idSupplier == null || idProduct.equals("0") & idSupplier.equals("0")){
             params.put("products", productDataStore.getAll());
         } else if(!idProduct.equals("0") & idSupplier.equals("0")){
             int id = Integer.parseInt(idProduct);
