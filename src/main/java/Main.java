@@ -44,7 +44,7 @@ public class Main {
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
 
         // Cart list object
-        Cart cartMethod = new Cart();
+        Cart cart = new Cart();
 
         //setting up a new supplier
         Supplier amazon = new Supplier("Amazon", "Digital content and services");

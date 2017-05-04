@@ -6,8 +6,6 @@ import freemarker.core._ArrayIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
-
 /**
  * Created by Peter Bognar on 2017.05.02..
  */
@@ -31,7 +29,11 @@ public class OrderProcessMethods implements OrderProcess {
     @Override
     public Order addToCart(Order order, OrderList orderList) {
         if (orderList.getOrder().getProduct() == order.getProduct()){
-            orderList.setStatus(OrderList.Status.inCheckOut);
+            order.setQuantity(order.getQuantity()+1);
+            orderList.setStatus(OrderList.Status.inCart);
+        }else{
+            order.setQuantity(order.getQuantity());
+            orderList.setStatus(OrderList.Status.inCart);
         }
 
         return null;
@@ -39,16 +41,19 @@ public class OrderProcessMethods implements OrderProcess {
 
     @Override
     public ArrayList<Order> checkOut(OrderList orderList) {
+        orderList.setStatus(OrderList.Status.inCheckOut);
         return null;
     }
 
     @Override
     public ArrayList<Order> payment(OrderList orderList) {
+        orderList.setStatus(OrderList.Status.payed);
         return null;
     }
 
     @Override
     public ArrayList<Order> feedBack(OrderList orderList) {
+        orderList.setStatus(OrderList.Status.payed);
         return null;
     }
 
