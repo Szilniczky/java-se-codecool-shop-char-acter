@@ -5,7 +5,10 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Codecool Shop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+
+
+    <title>not eBay</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -25,18 +28,74 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
 </head>
+
+<header>
+    <div class = "navbar-fixed-top">
+        <nav class="header-fixed">
+            <div class="navbar-brand">
+                <a href="/"> <img id="logo-png" src="/img/ebay_logo.png" alt="logo"/></a>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a>
+                            <div class="dropdown-content">
+                                <input id="drop-f-name" placeholder="Fisrt name"/>
+                                <input id="drop-l-name" placeholder="Last name"/>
+                                <input id="drop-email" placeholder="E-mail"/>
+                                <input id="drop-phone-number" placeholder="Phone number"/>
+                                <input id="drop-billing-address" placeholder="Billing address"/>
+                                <input id="drop-shipping-address" placeholder="Shipping address"/>
+                                <button id="btn-profile">Done</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href = "/cart" target="_blank" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
 <body>
 
-<div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
-</div>
-
 <div class="container">
-    <div class="well well-sm">
-        <strong th:text="${category.name}">Category Title</strong>
+
+
+    <div class="shop-name">
+        <form>
+            <input id = "search-input" name="search-bar" placeholder="search..." type="text" onkeyup="myFunction()"/>
+            <span class="glyphicon glyphicon-search"></span>
+            <select class = "select" name="id">
+                <option value="0">All products</option>
+                <option value="1">Accessories</option>
+                <option value="2">Laptop</option>
+                <option value="3">PC hardware</option>
+                <option value="4">Tablet</option>
+                <option value="5">Phone</option>
+                <option value="6">Monitor</option>
+            </select>
+            <select class = "select" name="id2">
+                <option value="0">All supplier</option>
+                <option value="1">Amazon</option>
+                <option value="2">Lenovo</option>
+                <option value="3">Nokia</option>
+                <option value="4">Asus</option>
+                <option value="5">Acer</option>
+                <option value="6">Samsung</option>
+                <option value="7">Philips</option>
+                <option value="8">Lg</option>
+                <option value="9">Trust</option>
+                <option value="10">Maxtor</option>
+                <option value="11">Hama</option>
+            </select>
+            <input class = "submit" type="submit"/>
+        </form>
     </div>
+
 
     <div id="products" class="row list-group">
 
@@ -51,14 +110,14 @@
                             <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
+                            <a id = "add-btn" class="btn btn-success">Add to cart</a>
+                            <input type="number" name="quantity" min="1" max="99" placeholder="-"/>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 <div th:replace="footer :: copy"></div>
