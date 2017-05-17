@@ -20,10 +20,16 @@ public class Main {
         exception(Exception.class, (e, req, res) -> e.printStackTrace());
         staticFileLocation("/public");
         port(8888);
+        populateData(); // populate some data for the memory storage
         OrderList cart = new OrderList();
-        // populate some data for the memory storage
-        populateData();
 
+
+        //before connection to db and upload, the base files
+        before((request, response) -> {
+
+
+        });
+        
         // Always start with more specific routes
         get("/hello", (req, res) -> "Hello World");
 

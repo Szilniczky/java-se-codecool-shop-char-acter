@@ -4,9 +4,6 @@ import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 public class OrderList {
     public enum Status {newOrder, inCart, inCheckOut, payed}
