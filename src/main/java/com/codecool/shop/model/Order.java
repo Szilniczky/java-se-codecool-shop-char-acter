@@ -10,9 +10,8 @@ public class Order {
     public Order() {
         this.id = nextId;
         nextId++;
-        this.quantity = 2;
-    }
 
+    }
 
     public Order(Product product, int quantity){
         this.id = nextId;
