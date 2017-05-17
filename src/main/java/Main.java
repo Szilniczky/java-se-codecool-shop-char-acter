@@ -20,13 +20,16 @@ public class Main {
         exception(Exception.class, (e, req, res) -> e.printStackTrace());
         staticFileLocation("/public");
         port(8888);
+        populateData(); // populate some data for the memory storage
+        OrderList cart = new OrderList();
 
-        // populate some data for the memory storage
-        populateData();
 
-        OrderList orderLists = new Cart().Cart();
-        orderLists.setStatus(OrderList.Status.newOrder);
+        //before connection to db and upload, the base files
+        before((request, response) -> {
 
+
+        });
+        
         // Always start with more specific routes
         get("/hello", (req, res) -> "Hello World");
 
@@ -34,20 +37,24 @@ public class Main {
         get("/", ProductController::renderProducts, new ThymeleafTemplateEngine());
         // Equivalent with above
         get("/index", (Request req, Response res) -> {
+
            return new ThymeleafTemplateEngine().render( ProductController.renderProducts(req, res) );
         });
 
-        get("/", (Request req, Response res) -> {
-            req.session().attribute("cart", orderLists);
-            Cart cart2 = req.session().attribute("cart");
+        get("/product", (Request req, Response res) -> {
+            cart.orderProcess(1);
+            req.session().attribute("cart", cart);
+            cart.orderProcess(3);
+            req.session().attribute("cart", cart);
             return "session executed";
         });
-        get("/cart", (Request req, Response res) -> {
-            System.out.println("addtocart");
-            Order order = new Order();
-            new OrderProcessMethods(order, orderLists);
 
-            return orderLists.getStatus();
+        get("/cart", (Request req, Response res) -> {
+            OrderList cartFromSession = req.session().attribute("cart");
+            String data = cartFromSession.getInCart().get(1).toString();
+            String data2 = cartFromSession.getInCart().get(2).toString();
+
+                return data + "</br>" + data2;
         });
 
         // Add this line to your project to enable the debug screen
