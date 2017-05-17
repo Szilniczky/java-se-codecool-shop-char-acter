@@ -29,7 +29,7 @@ public class Main {
 
 
         });
-        
+
         // Always start with more specific routes
         get("/hello", (req, res) -> "Hello World");
 
