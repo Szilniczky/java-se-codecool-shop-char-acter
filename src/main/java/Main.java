@@ -34,7 +34,6 @@ public class Main {
 
         });
 
-        
         // Always start with more specific routes
         get("/hello", (req, res) -> "Hello World");
 
@@ -60,6 +59,13 @@ public class Main {
             String data2 = cartFromSession.getInCart().get(2).toString();
 
                 return data + "</br>" + data2;
+        });
+
+        get("/Id", (request, response) -> {
+            String idString = request.params(":id");
+            int id = Integer.parseInt(idString);
+            cart.orderProcess(id);
+            return request.params(":id");
         });
 
         // Add this line to your project to enable the debug screen
