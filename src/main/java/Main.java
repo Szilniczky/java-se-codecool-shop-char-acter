@@ -1,6 +1,7 @@
 import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
+import com.codecool.shop.controller.DBCMethods;
 import com.codecool.shop.controller.ProductController;
 import com.codecool.shop.dao.*;
 import com.codecool.shop.dao.implementation.*;
@@ -10,6 +11,7 @@ import spark.Response;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 import spark.Session;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 
 public class Main {
@@ -25,8 +27,10 @@ public class Main {
 
 
         //before connection to db and upload, the base files
-        before((request, response) -> {
-
+        before((Request request, Response response) -> {
+            DataBaseController dataBaseController = new DBCMethods();
+            dataBaseController.makeTables();
+            dataBaseController.uploadBaseData();
 
         });
 
