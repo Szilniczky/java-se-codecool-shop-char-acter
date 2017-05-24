@@ -3,12 +3,15 @@ package com.codecool.shop.dao.implementation;
 
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.model.ProductCategory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductCategoryDaoMem implements ProductCategoryDao {
 
+    private static final Logger logger = LoggerFactory.getLogger(ProductCategoryDaoMem.class);
     private List<ProductCategory> DATA = new ArrayList<>();
     private static ProductCategoryDaoMem instance = null;
 
@@ -28,19 +31,24 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
     public void add(ProductCategory category) {
         category.setId(DATA.size() + 1);
         DATA.add(category);
+        logger.debug("Add categories.");
     }
 
     @Override
     public ProductCategory find(int id) {
+        logger.debug("Find by categories.");
         return DATA.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
     }
 
     @Override
-    public void remove(int id) { DATA.remove(find(id));
+    public void remove(int id) {
+        DATA.remove(find(id));
+        logger.debug("Remove category.");
     }
 
     @Override
     public List<ProductCategory> getAll() {
+        logger.debug("List by all categories.");
         return DATA;
     }
 }

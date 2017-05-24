@@ -4,6 +4,8 @@ import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.model.Product;
 import org.postgresql.util.PSQLException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 /**
@@ -14,11 +16,12 @@ public class DBCMethods implements DataBaseController {
     private static final String DB_USER = "postgres";
     private static final String DB_PASSWORD = "postgres";
 
+    private static final Logger logger = LoggerFactory.getLogger(DBCMethods.class);
 
     //Make base data before build site
     @Override
     public void uploadElements() throws SQLException {
-
+        logger.debug("Upload elements.");
     }
 
     @Override
@@ -26,16 +29,17 @@ public class DBCMethods implements DataBaseController {
    /*
         String query = "UPDATE shopdb SET title = '" + " title" + "' WHERE id = '" + productDataStore.getAll().get(id).getId() + "';";
         executeQuery(query);*/
+        logger.debug("Update a specific element.");
     }
 
     @Override
     public void removeElement(int id) {
-
+        logger.debug("Remove a specific element.");
     }
 
     @Override
     public void findElement(int id) {
-
+        logger.debug("Find a specific element.");
     }
 
     @Override
@@ -83,9 +87,12 @@ public class DBCMethods implements DataBaseController {
                 " PRIMARY KEY ( id ))";
         executeQuery(productQuery);
 
+        logger.debug("Tables created.");
+
     }
 
     private Connection getConnection() throws SQLException {
+        logger.info("Connection set up.");
         return DriverManager.getConnection(DATABASE, DB_USER, DB_PASSWORD);
     }
 

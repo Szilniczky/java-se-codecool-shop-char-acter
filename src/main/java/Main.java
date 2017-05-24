@@ -13,15 +13,22 @@ import spark.Session;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
 
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
+
+        logger.info("Starting...");
 
         // default server settings
         exception(Exception.class, (e, req, res) -> e.printStackTrace());
         staticFileLocation("/public");
         port(8888);
+        logger.info("Set up port...");
         populateData(); // populate some data for the memory storage
         OrderList cart = new OrderList();
 
