@@ -8,6 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+
+/**
+ *DBCMethods makes the database connection and handle the SQL actions.
+ * @author szilniczky
+ */
+
 /**
  * Created by Peter Bognar on 2017.05.17..
  */

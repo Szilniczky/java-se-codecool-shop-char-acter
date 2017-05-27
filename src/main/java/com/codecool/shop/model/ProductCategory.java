@@ -2,9 +2,22 @@ package com.codecool.shop.model;
 
 import java.util.ArrayList;
 
+/**
+ * ProductCategory handle ProductCategory actions.
+ * It has department and products.
+ * @author szilniczky
+ */
+
 public class ProductCategory extends BaseModel {
     private String department;
     private ArrayList<Product> products;
+
+    /**
+     *Construct and initialize a name, department and a description.
+     * @param name name
+     * @param department department
+     * @param description description
+     */
 
     public ProductCategory(String name, String department, String description) {
         super(name);

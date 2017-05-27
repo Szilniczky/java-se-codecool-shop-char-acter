@@ -16,6 +16,11 @@ import java.util.function.Consumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Webshop system with electronic products
+ * @author  szilniczky
+ */
+
 public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);

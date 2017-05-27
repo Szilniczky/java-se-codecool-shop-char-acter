@@ -3,15 +3,31 @@ package com.codecool.shop.model;
 
 import java.lang.reflect.Field;
 
+/**
+ * BaseModel contains basic informations from product and supplier.
+ * @author szilniczky
+ */
+
 public class BaseModel {
 
     protected int id;
     protected String name;
     protected String description;
 
+    /**
+     * Construct and initialize a name.
+     * @param name name
+     */
+
     public BaseModel(String name) {
         this.name = name;
     }
+
+    /**
+     * Construct and initialize a name and description.
+     * @param name name
+     * @param description description
+     */
 
     public BaseModel(String name, String description) {
         this.name = name;

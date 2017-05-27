@@ -2,6 +2,12 @@ package com.codecool.shop.model;
 
 import java.util.Currency;
 
+/**
+ * Product handle Product actions and informations.
+ * It has defaultPrice, defaultCurrency, productCategory and supplier.
+ * @author szilniczky
+ */
+
 public class Product extends BaseModel {
 
     private float defaultPrice;
@@ -9,6 +15,16 @@ public class Product extends BaseModel {
     private ProductCategory productCategory;
     private Supplier supplier;
 
+    /**
+     * Construct and initialize a name, defaultPrice, currencyString, description,
+     * productCategory and a supplier.
+     * @param name product name
+     * @param defaultPrice product defaultPrice
+     * @param currencyString product currencyString
+     * @param description product description
+     * @param productCategory product productCategory
+     * @param supplier product supplier
+     */
 
     public Product(String name, float defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier) {
         super(name, description);

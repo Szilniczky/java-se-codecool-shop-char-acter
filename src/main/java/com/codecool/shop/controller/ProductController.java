@@ -17,6 +17,11 @@ import spark.ModelAndView;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * ProductController handle the filtering system.
+ * @author szilniczky
+ */
+
 public class ProductController {
 
     public static ModelAndView renderProducts(Request req, Response res) {

@@ -2,9 +2,20 @@ package com.codecool.shop.model;
 
 import java.util.ArrayList;
 
+/**
+ * Supplier handle simple supplier information.
+ * It has products.
+ *@author szilniczky
+ */
 
 public class Supplier extends BaseModel {
     private ArrayList<Product> products;
+
+    /**
+     * Construct and initialize a name and a description.
+     * @param name supplier name
+     * @param description supplier description
+     */
 
     public Supplier(String name, String description) {
         super(name);
